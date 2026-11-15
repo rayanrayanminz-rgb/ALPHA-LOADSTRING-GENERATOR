@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  command = "npm run build"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/s/:id"
+  to = "/.netlify/functions/script?id=:id"
+  status = 200
+  force = true
